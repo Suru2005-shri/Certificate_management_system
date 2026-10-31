@@ -1,0 +1,10 @@
+# Caddy gets and renews free HTTPS certificates automatically. Needs 3 DNS names pointing at the server.
+{$APP_DOMAIN} {
+	reverse_proxy web:80
+}
+{$AUTH_DOMAIN} {
+	reverse_proxy keycloak:8080
+}
+{$FILES_DOMAIN} {
+	reverse_proxy minio:9000
+}
